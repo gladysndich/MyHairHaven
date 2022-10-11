@@ -10,29 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-ActiveRecord::Schema[7.0].define(version: 2022_10_11_091645) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_11_094734) do
+  create_table "appointments", force: :cascade do |t|
+    t.integer "time"
+    t.integer "customer_id"
+    t.integer "hairdresser_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.integer "phone_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "hairdressers", force: :cascade do |t|
     t.string "name"
     t.integer "phone_number"
     t.string "image"
-=======
-ActiveRecord::Schema[7.0].define(version: 2022_10_11_092541) do
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "hairstyles", force: :cascade do |t|
     t.string "title"
     t.string "image"
     t.integer "price"
     t.integer "duration"
     t.integer "hairdresser_id"
->>>>>>> e8e43412b0173377384f97f52f12a261377f4067
-=======
-ActiveRecord::Schema[7.0].define(version: 2022_10_11_094734) do
-  create_table "appointments", force: :cascade do |t|
-    t.integer "time"
-    t.integer "customer_id"
-    t.integer "hairdresser_id"
->>>>>>> a9b39ad (appointment model)
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
