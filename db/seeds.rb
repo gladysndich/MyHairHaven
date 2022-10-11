@@ -1,4 +1,6 @@
-Hairdresser.create([
+puts '🌱 Seeding hairhaven...'
+
+hairdresser = Hairdresser.create([
     {
       name: "Stacy Roberts",
       image: "https://i.pinimg.com/736x/7e/be/72/7ebe72b98ae14b647731760cf6f6d3fb.jpg",
@@ -25,3 +27,88 @@ Hairdresser.create([
         phone_number: 20487326
     }
 ])
+
+hairstyle = Hairstyle.create([
+    {
+      title: "Rounded",
+      image: "https://publish.purewow.net/wp-content/uploads/sites/2/2018/05/rounded-hair-yara-shahidi25.jpg?fit=728%2C921",
+      price: 5000,
+      duration: 4,
+      hairdresser_id: 1
+
+    },
+    {
+        title: "The Tight Crop",
+        image: "https://publish.purewow.net/wp-content/uploads/sites/2/2018/05/tight-crop-hair-lupita-nyongo27.jpg?fit=728%2C921",
+        price: 2000,
+        duration: 2,
+        hairdresser_id: 2
+  
+      },
+      {
+        title: "Long And Curly",
+        image: "https://publish.purewow.net/wp-content/uploads/sites/2/2018/05/long-and-curly-hair-vanessa-hudgens29.jpg?fit=728%2C921",
+        price: 10000,
+        duration: 6,
+        hairdresser_id: 3
+  
+      },
+      {
+        title: "Curly Bangs",
+        image: "https://publish.purewow.net/wp-content/uploads/sites/2/2018/05/curly-bangs-zendaya34.jpg?fit=728%2C921",
+        price: 6000,
+        duration: 2,
+        hairdresser_id: 4
+  
+      },
+      {
+        title: "Shoulder Length Waves",
+        image: "https://publish.purewow.net/wp-content/uploads/sites/2/2018/05/shoulder-length-wavy-hair-kate-middleton.jpg?fit=728%2C524",
+        price: 4000,
+        duration: 4,
+        hairdresser_id: 5
+  
+      },
+      {
+        title: "Bouncy Bob",
+        image: "https://publish.purewow.net/wp-content/uploads/sites/2/2018/05/bouncy-bob-viola-davis.jpg?fit=728%2C524",
+        price: 1500,
+        duration: 1,
+        hairdresser_id: 2
+  
+      },
+      {
+        title: "Tousled Lob",
+        image: "https://publish.purewow.net/wp-content/uploads/sites/2/2018/05/tousled-lob-kendall-jenner35.jpg?fit=728%2C921",
+        price: 500,
+        duration: 1,
+        hairdresser_id: 1
+  
+      },
+      {
+        title: "Gelled Edges",
+        image: "https://publish.purewow.net/wp-content/uploads/sites/2/2018/05/gelled-edges-yara-shahidi14.jpg?fit=728%2C921",
+        price: 8000,
+        duration: 7,
+        hairdresser_id: 3
+  
+      },
+      {
+        title: "Loose Curly Afro",
+        image: "https://publish.purewow.net/wp-content/uploads/sites/2/2018/05/loose-curly-afro-tracee-ellis-ross9.jpg?fit=728%2C524",
+        price: 7000,
+        duration: 5,
+        hairdresser_id: 4
+  
+      },
+      {
+        title: "Super-short Pixie",
+        image: "https://publish.purewow.net/wp-content/uploads/sites/2/2018/05/super-short-pixie-hair-zoe-kravitz18.jpg?fit=728%2C921",
+        price: 1000,
+        duration: 2,
+        hairdresser_id: 5
+  
+      }
+])
+
+puts '✅ Done seeding'
