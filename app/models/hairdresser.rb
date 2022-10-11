@@ -1,2 +1,3 @@
 class Hairdresser < ApplicationRecord
+    
 end
