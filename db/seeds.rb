@@ -5,61 +5,61 @@ puts '🌱 Seeding hairhaven...'
 cust1 = Customer.create(
     name: "Andrew Kibe",
     location:"Huruma",
-    phone_number:"665-7890"
+    phone_number:6657890
 )
 
 cust2 = Customer.create(
     name: "Justin Kenuthia",
     location:"Uthiru",
-    phone_number:"9088-56688"
+    phone_number:908856688
 )
 
 cust3 = Customer.create(
     name: "Veronica Njeri",
     location:"Nakuru",
-    phone_number:"75638-557"
+    phone_number:75638557
 )
 
 cust4 = Customer.create(
     name: "Austin chirchir",
     location:"Bomet",
-    phone_number:"333445-112"
+    phone_number:333445112
 )
 
 cust5 = Customer.create(
     name: "Joram Gatuu",
     location:"Kikuyu",
-    phone_number:"555-33888"
+    phone_number:55533888
 )
 
 cust6 = Customer.create(
     name: "Vicky Wanjiru",
     location:"Donholm",
-    phone_number:"444-67887"
+    phone_number:44467887
 )
 
 cust7 = Customer.create(
     name: "Farahan Ali",
     location:"Isili",
-    phone_number:"9367-2211"
+    phone_number:93672211
 )
 
 cust8 = Customer.create(
     name: "Gladys Wangari",
     location:"Westlands",
-    phone_number:"7770-3445"
+    phone_number:77703445
 )
 
 cust9 = Customer.create(
     name: "Susan Otieno",
     location:"Kisumu",
-    phone_number:"4333-5867"
+    phone_number:43335867
 )
 
 cust10 = Customer.create(
     name: "Drew Musyoka",
     location:"Kitengela",
-    phone_number:"333-6789"
+    phone_number:3336789
 )
 
 
@@ -180,33 +180,36 @@ hairstyle = Hairstyle.create([
 ##appontments
 appointment = Appointment.create([
   {
-  time: "2",
-  customer_id: "1",
-  hairdresser_id: "2"
+    time: 2,
+  customer_id: 1,
+  hairdresser_id: 2
+
   },
 
   {
-  time: "2",
-  customer_id: "4",
-  hairdresser_id: "1"
+    time: 2,
+  customer_id: 4,
+  hairdresser_id: 1
+
   },
 
   {
-  time: "3",
-  customer_id: "2",
-  hairdresser_id: "5"
+    time: 3,
+  customer_id: 2,
+  hairdresser_id: 5
   },
 
   {
-  time: "1",
-  customer_id: "4",
-  hairdresser_id: "2"
+    time: 1,
+  customer_id: 4,
+  hairdresser_id: 2
+
   },
 
   {
-  time: "3",
-  customer_id: "5",
-  hairdresser_id: "4"
+    time: 3,
+  customer_id: 5,
+  hairdresser_id: 4
   }
 ])
 puts '✅ Done seeding'
