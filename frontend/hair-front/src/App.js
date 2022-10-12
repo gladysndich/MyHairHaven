@@ -1,26 +1,26 @@
-import React from "react";
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
+import LandingPage from './components/LandingPage'
+import LoginPage from './components/LoginPage'
+import RegisterPage from './components/RegisterPage'
+import HomePage from './components/HomePage'
 import Hairstyle from './components/Hairstyle'
+import HairstyleContainer from './components/HairstyleContainer'
 
-function App() {
-  return (
-    <div className="App">
+import './App.css'
 
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <Hairstyle/>
-    </div>
-  );
+export default function App() {
+    return (
+        <Router>
+            <div>
+                <Switch>
+                    <Route exact path="/" component={ LandingPage } />
+                    <Route path="/login" component={ LoginPage } />
+                    <Route path="/register" component={ RegisterPage } />
+                    <Route path="/home" component={ HomePage } />
+                </Switch>
+            </div>
+        </Router>
+    )
 }
-
-export default App;
