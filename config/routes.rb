@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :appointments
   resources :hairdressers, only: [:index, :show]
 
+  post '/login', to: "sessions#create"
+  delete '/logout', to: "sessions#destroy"
 end
