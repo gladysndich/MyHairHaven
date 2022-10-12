@@ -1,4 +1,6 @@
 puts '🌱 Seeding hairhaven...'
+ 
+
 
 cust1 = Customer.create(
     name: "Andrew Kibe",
@@ -175,5 +177,33 @@ hairstyle = Hairstyle.create([
       }
 ])
 
+##appontments
+appointment = Appointment.create[(
+  {
+    time: "2",
+  customer_id: "1",
+  hairdresser_id: "2"
+  },
+  {
+    time: "2",
+  customer_id: "4",
+  hairdresser_id: "1"
+  },
+  {
+    time: "3",
+  customer_id: "2",
+  hairdresser_id: "5"
+  },
+  {
+    time: "1",
+  customer_id: "4",
+  hairdresser_id: "2"
+  },
+  {
+    time: "3",
+  customer_id: "5",
+  hairdresser_id: "4"
+  }
+)]
 puts '✅ Done seeding'
 
