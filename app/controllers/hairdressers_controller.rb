@@ -1,5 +1,5 @@
 class HairdressersController < ApplicationController
-    rescue_from ActiveRecord::RecordNotFound, with: :hairstyle_not_found
+    rescue_from ActiveRecord::RecordNotFound, with: :hairdresser_not_found
 
     def index
         hairdressers = Hairdresser.all
@@ -7,7 +7,7 @@ class HairdressersController < ApplicationController
     end
 
     def show 
-        hairdresser = Hairdresser.find(id: params[:id])
+        hairdresser = Hairdresser.find(params[:id])
         render json: hairdresser
     end
 

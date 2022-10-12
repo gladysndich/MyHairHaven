@@ -26,9 +26,8 @@ class CustomersController < ApplicationController
         if customer
             customer.destroy
             head :no_content
-            else
-                render json: {error:"Customer not found"}, status: :not_found
-            end
+         else
+            render json: {error:"Customer not found"}, status: :not_found
         end
     end
 
@@ -37,7 +36,10 @@ class CustomersController < ApplicationController
         render json:customer, status: :created
     end
 
-        #Private
+    
+    private
+
     def customer_params
         params.permit(:name, :location, :phone_number)
+    end
 end
