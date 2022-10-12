@@ -1,25 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import HairdressersContainer from "./components/HairdressersContainer";
 import Hairstyle from './components/Hairstyle'
 
-function App() {
-  return (
-    <div className="App">
 
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+function App() {
+
+  const[hairdressers, setHairdressers] = useState([]);
+
+  useEffect(() => {
+    fetch("/hairdressers")
+    .then((r) => r.json())
+    .then(setHairdressers);
+  }, []); 
+  return (
+
+    <HairdressersContainer hairdressers={hairdressers} />
       <Hairstyle/>
     </div>
+
   );
 }
 
