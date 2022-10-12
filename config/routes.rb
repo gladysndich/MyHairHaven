@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :customers, only:[:show, :create, :update, :destroy]
+  resources :customers, only:[:show, :create, :destroy, :update]
 
   resources :hairstyles, only: [:index, :show] 
   resources :appointments
