@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HairdressersContainer from "./components/HairdressersContainer";
+import Hairstyle from './components/Hairstyle'
 
 
 function App() {
@@ -12,7 +13,11 @@ function App() {
     .then(setHairdressers);
   }, []); 
   return (
+
     <HairdressersContainer hairdressers={hairdressers} />
+      <Hairstyle/>
+    </div>
+
   );
 }
 
