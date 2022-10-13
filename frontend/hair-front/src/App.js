@@ -11,12 +11,21 @@ import Hairstyle from './components/Hairstyle';
 import './App.css';
 
 
-function App() {
+import HairdressersContainer from "./components/HairdressersContainer";
 
-  
-  return (
-    <div>
-      <Router>
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
+import LandingPage from './components/LandingPage'
+import LoginPage from './components/LoginPage'
+import RegisterPage from './components/RegisterPage'
+import HomePage from './components/HomePage'
+import Hairstyle from './components/Hairstyle'
+import './App.css'
+
+export default function App() {
+    return (
+      <div>
+        <Router>
             <div>
                 <Routes>
                     <Route exact path="/" component={ LandingPage } />
@@ -25,12 +34,11 @@ function App() {
                     <Route path="/home" component={ HomePage } />
                 </Routes>
             </div>
-      </Router>
-      <HairdressersContainer />
+
+        </Router>
+      <HairdressersContainer hairdressers={hairdressers} />
       <Hairstyle/>
-    </div>
+      </div>
+    )
 
-  );
 }
-
-export default App;
