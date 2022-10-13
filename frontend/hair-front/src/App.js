@@ -1,20 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import HairdressersContainer from "./components/HairdressersContainer";
-import Hairstyle from './components/Hairstyle'
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import LandingPage from './components/LandingPage';
+import LoginPage from './components/LoginPage';
+import RegisterPage from './components/RegisterPage';
+import HomePage from './components/HomePage';
+import Hairstyle from './components/Hairstyle';
+import './App.css';
 
 
 function App() {
 
-  const[hairdressers, setHairdressers] = useState([]);
-
-  useEffect(() => {
-    fetch("/hairdressers")
-    .then((r) => r.json())
-    .then(setHairdressers);
-  }, []); 
+  
   return (
-
-    <HairdressersContainer hairdressers={hairdressers} />
+    <div>
+      <Router>
+            <div>
+                <Routes>
+                    <Route exact path="/" component={ LandingPage } />
+                    <Route path="/login" component={ LoginPage } />
+                    <Route path="/register" component={ RegisterPage } />
+                    <Route path="/home" component={ HomePage } />
+                </Routes>
+            </div>
+      </Router>
+      <HairdressersContainer />
       <Hairstyle/>
     </div>
 

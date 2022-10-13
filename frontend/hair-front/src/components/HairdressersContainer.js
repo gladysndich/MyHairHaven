@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
 import HairdresserCard from "./HairdresserCard";
 
 
-function HairdressersContainer({hairdressers}){
+function HairdressersContainer(){
+    const[hairdressers, setHairdressers] = useState([]);
+
+  useEffect(() => {
+    fetch("/hairdressers")
+    .then((r) => r.json())
+    .then(setHairdressers);
+  }, []); 
+
     const hairdresserCards = hairdressers.map((hairdresser) => (
         <HairdresserCard
         key={hairdresser.id}
