@@ -8,8 +8,11 @@ import Appoint from './components/Appointment';
 function App() {
   return (
     <>
-    <Appoint/>
+
     <NewAppointment/>
+
+    <br></br>
+    <Appoint/>
     </>
   )
 }

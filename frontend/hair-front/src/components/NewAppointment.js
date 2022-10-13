@@ -30,6 +30,7 @@ function AppointmentForm({addAppointment}){
         <div>
             <form onSubmit={handleSubmit}>
             <h2>New Appointment</h2>
+                 <br></br>
                 <div>
                     <label>Date
                     <input type="text" value={date}
@@ -37,6 +38,7 @@ function AppointmentForm({addAppointment}){
                     />
                     </label>
                 </div>
+                <br></br>
                 <div>
                     <label>Time in 24hr
                         <input type="text" value={time}
@@ -44,6 +46,7 @@ function AppointmentForm({addAppointment}){
                         />
                         </label>
                 </div>
+                <br></br>
                 <button type="submit">submit appointment</button>
             </form>
 

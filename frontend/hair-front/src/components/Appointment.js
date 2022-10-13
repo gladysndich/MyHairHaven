@@ -8,10 +8,12 @@ const AppToaster = Toaster.create({
 
 function Appoint(){
     const [appointments,setAppointments]= useState([])
+
     useEffect(()=>{
         axios.get("http://localhost:3000/appointments/").then(response=>{
-            const {data} = response
+           const {data} = response
             setAppointments(data.result)
+            //setAppointments(response.appointments.data)
         })
     },[])
 
@@ -63,6 +65,7 @@ function Appoint(){
                 {appointments.map(appointment =>{
                     const{ id, time } = appointment
                     return (
+                        
                         <tr key={id}>
                             <td>{id}</td>
                             <td>
