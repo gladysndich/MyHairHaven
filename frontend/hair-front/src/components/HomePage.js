@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import HairdressersContainer from './HairdressersContainer'
 
 export default function HomePage() {
     return (
@@ -8,6 +9,7 @@ export default function HomePage() {
             <Link to="/">
                 <button className="primary-button">Log out</button>
             </Link>
+            <HairdressersContainer />
         </div>
     )
 }
