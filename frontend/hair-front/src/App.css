@@ -1,12 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;1,300;1,600&display=swap");
 *{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  margin: 0 auto
+  margin: 0 auto;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
 }
 
 .m-5-auto {
@@ -180,5 +186,3 @@ form span {
     transform: rotate(360deg);
   }
 }
-
- 
