@@ -1,36 +1,86 @@
-import React, { useState,useEffect} from "react";
-//import { Link } from "react-router-dom";
-import EditAppointment from "./EditAppointment";
+import {Button ,EditableText,Toaster,Position, } from "@blueprintjs/core"
+import axios from "axios"
+import { useEffect,useState } from "react"
 
- const point = "http://localhost:3000/appointments"
+const AppToaster = Toaster.create({
+    position: Position.TOP,
+})
 
+function Appoint(){
+    const [appointments,setAppointments]= useState([])
+    useEffect(()=>{
+        axios.get("http://localhost:3000/appointments/").then(response=>{
+            const {data} = response
+            setAppointments(data.result)
+        })
+    },[])
 
-function Appointment(){
+    const onChangeHandler = (id, key, value) => {
+        console.log({id, key, value})
+        setAppointments(values=>{
+            return values.map(item=>
+                item.id === id? {...item, [key]: value } : item
+                )
+        })
+    }
 
-    //const {date,time}= appointment;
+    const updateAppointments = id => {
+        const data = appointments.find(item=>item.id===id);
+        axios.put(`http://localhost:3000/appointments/${id}`, data).then (response =>{
+            AppToaster.show({
+                message: "updated successfully",
+                intent : "success",
+                timeout: 3000,
+            })
+        })
+    }
 
-   const [appointments,setAppointments] = useState([])
-
-    useEffect(() => {
-        fetch(point)
-        .then(response => response.json())
-           .then(data => setAppointments(data))
-    },[]);
- console.log(appointments)
-    return(
-        <div>
-            <h1>Appointments</h1>
-            {appointments.map(appointment=>{
-                return(
-                    <div key={appointment.id}>
-                        <EditAppointment/>
-                        </div>  
+    const deleteAppointments = id => {
+        axios.delete(`http://localhost:3000/appointments/${id}`).then(response =>{
+            setAppointments(values=>{
+                return values.filter(item=>item.id!==id)
+            })
+            AppToaster.show({
+                message: "deleted successfully",
+                intent : "success",
+                timeout: 3000,
+            })
+        })
+    }
+    
+    return (
+        <div className="App">
+            <table className="bp4-html-table .modifier">
+                <thead>
+                    <tr>
                         
+                        <th>appointment_ID</th>
+                        <th>Time</th>
+                        <th>Action</th>
+                        </tr>
+               </thead>
+            <tbody>
+                {appointments.map(appointment =>{
+                    const{ id, time } = appointment
+                    return (
+                        <tr key={id}>
+                            <td>{id}</td>
+                            <td>
+                             <EditableText value={time}
+                             onChange={value=>onChangeHandler(id, "time", value)}/>
+                             </td>
+                             <td>
+                                <Button intent="primary" onClick={()=>updateAppointments(id)}>Update</Button>
+                                &nbsp; 
+                                <Button intent="danger" onClick={()=>deleteAppointments(id)}>Delete</Button>
+                             </td>
+                        </tr>
                         )
-                    })}
-            </div>
+
+                })}
+            </tbody>
+            </table>
+        </div>
     )
-
 }
-
-export default Appointment;
+  export default Appoint;
