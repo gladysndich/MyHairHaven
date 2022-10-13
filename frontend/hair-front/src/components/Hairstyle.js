@@ -22,6 +22,6 @@ function Hairstyle({ pTitle, pImage, pPrice, pDuration}) {
           </div>
           </div>
     );
-    }
+}
 
-    export default Hairstyle;
+export default Hairstyle;
