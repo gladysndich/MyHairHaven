@@ -1,14 +1,11 @@
-import React from "react";
-import HairdressersContainer from "./components/HairdressersContainer";
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-import LandingPage from './components/LandingPage';
-import LoginPage from './components/LoginPage';
-import RegisterPage from './components/RegisterPage';
-import HomePage from './components/HomePage';
-import './App.css';
-
+import HairstylesContainer from './components/HairstyleContainer'
+import HairdressersContainer from "./components/HairdressersContainer";
+import LandingPage from './components/LandingPage'
+import LoginPage from './components/LoginPage'
+import RegisterPage from './components/RegisterPage'
+import HomePage from './components/HomePage'
+import './App.css'
 
 export default function App() {
     return (
@@ -16,18 +13,15 @@ export default function App() {
         <Router>
             <div>
                 <Routes>
-                    <Route exact path="/" component={ LandingPage } />
-                    <Route path="/login" component={ LoginPage } />
-                    <Route path="/register" component={ RegisterPage } />
-                    <Route path="/home" component={ HomePage } />
-          
+                    <Route exact path="/" element={ <LandingPage/> } />
+                    <Route path="/login" element={ <LoginPage/> } />
+                    <Route path="/register" element={ <RegisterPage/> } />
+                    <Route path="/home" element={ <HomePage/> } />
+                    <Route exact path="/hairstyles" element={<HairstylesContainer/>}></Route>
+                    <Route exact path="/hairdressers" element={<HairdressersContainer/>}></Route>
                 </Routes>
             </div>
-
         </Router>
-      
-      
       </div>
     )
-
 }

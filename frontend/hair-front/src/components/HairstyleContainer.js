@@ -1,18 +1,19 @@
-import React, { useState,useEffect } from "react";
+
+import React, {useEffect, useState} from "react";
 import Hairstyle from "./Hairstyle";
 
 
 function HairstylesContainer() {
   const [hairstyles, setHairstyleList] = useState([]);
     useEffect(() => {
-    fetch('http://localhost:3000/hairstyles')
+    fetch('/hairstyles')
     .then(res => res.json())
     .then(hairstylesData => {
       setHairstyleList(hairstylesData)
       });
   }, []);
 
-  const hairstylesCard = hairstyles.map( (hairstyle)=> (<Hairstyle key={hairstyle.id} pImage={hairstyle.image}  pName={hairstyle.name}  pPrice={hairstyle.price} pDuration={hairstyle.duration}/>))
+  const hairstylesCard = hairstyles.map( (hairstyle)=> (<Hairstyle key={hairstyle.id}   pTitle={hairstyle.title} pImage={hairstyle.image}  pPrice={hairstyle.price} pDuration={hairstyle.duration}/>))
 
   
   return (
