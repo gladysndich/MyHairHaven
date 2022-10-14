@@ -1,45 +1,22 @@
-import React, { useState } from "react";
+
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
-import "./Navbar.css";
 
+ export default function Navbar(){
+    return(
+      <nav class="navbar bg-light">
+      <form class="container-fluid justify-content-start">
+        <button class="btn btn-outline-success me-5" type="button"><Link className="nav-link" to="/login">LOGIN</Link></button>
+        <button class="btn btn-outline-success me-5" type="button"><Link className="nav-link" to="/register">REGISTER</Link></button>
+        <button class="btn btn-outline-success me-5" type="button"><Link className="nav-link" to="/home">HOME</Link></button>
+        <button class="btn btn-outline-success me-5" type="button"> <Link className="nav-link" to="/hairstyles">HAIRSTYLES</Link></button>
+        <button class="btn btn-outline-success me-5" type="button"> <Link className="nav-link" to="/hairdressers">HAIRDRESSERS</Link></button>
+        <button class="btn btn-outline-success me-5" type="button"> <Link className="nav-link" to="/appointments">APPOINTMENTS</Link></button>
+        <button class="btn btn-outline-success me-5" type="button"> <Link className="nav-link" to="/appointmentform">APPOINTMENTFORM</Link></button>
 
-const Navbar = () => {
-  const [click, setClick] = useState(false);
+      </form>
+    </nav>         
 
-  const handleClick = () => setClick(!click);
-  return (
-    <div className="navbar">
-      <div className="logo">
-      </div>
-      <ul className={"click ? 'nav-menu active : nav-menu"}>
-        <li>
-          <Link to="/">HomePage</Link>
-        </li>
+    )
 
-        <li>
-          <Link to="/loginpage">LoginPage</Link>
-        </li>
+ }
 
-        <li>
-          <Link to="/registerpage">RegisterPage</Link>
-        </li>
-
-        <li>
-          <Link to="/homepage">HomePage</Link>
-        </li>
-
-      </ul>
-      <div className="hamburger" onClick={handleClick}>
-        {click ? (
-          <FaTimes size={30} style={{ color: "brown" }} />
-        ) : (
-          <FaTimes size={30} style={{ color: "brown" }} />
-        )}
-        <FaBars size={30} style={{ color: "brown" }} />
-      </div>
-    </div>
-  );
-};
-
-export default Navbar;
