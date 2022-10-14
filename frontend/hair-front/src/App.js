@@ -1,8 +1,3 @@
-
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HairstylesContainer from './components/HairstyleContainer'
-import HairdressersContainer from "./components/HairdressersContainer";
-import LandingPage from './components/LandingPage'
 import AppointmentForm from './components/AppointmentForm'
 import LoginPage from './components/LoginPage'
 import RegisterPage from './components/RegisterPage'
