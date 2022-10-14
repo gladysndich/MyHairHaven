@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 
 function HairdresserCard( { hairdresser }) {
     const { name, image} = hairdresser;
@@ -8,7 +8,7 @@ function HairdresserCard( { hairdresser }) {
         <div style={stylingCard}>
             <img src={image} alt={name} width="100%" height="250px"></img>
             <h3>{name}</h3>
-            <p><button style={seeHairstylesButton}>See Hairstyles</button></p>
+            <p><button style={seeHairstylesButton}> <Link to="/hairstyles">See Hairstyles</Link></button></p>
         </div>
         
     )
@@ -21,7 +21,10 @@ var stylingCard = {
   width: "200px",
   "font-family": "Itim",
   "background-color": "#D9D9D9",
-  margin: "1rem"
+  margin: "1rem",
+  display: "inline-block",
+  "vertical-align": "middle"
+
 }
 
 var seeHairstylesButton = {
